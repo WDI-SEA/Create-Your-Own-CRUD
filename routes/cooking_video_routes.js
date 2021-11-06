@@ -33,7 +33,8 @@ router.put('/:idx', (req,res)=>{
     contentData[req.params.idx].contentCreator = req.body.contentCreator
     contentData[req.params.idx].contentCountry = req.body.contentCountry
     contentData[req.params.idx].contentUrl = req.body.contentUrl
-    contentData[req.params.idx].contentCooked = req.body.contentCooked
+    contentData[req.params.idx].contentRecipe = req.body.contentRecipe
+    contentData[req.params.idx].contentDescription = JSON.stringify(req.body.contentDescription)
     fs.writeFileSync('./cooking.json', JSON.stringify(contentData))
     res.redirect('/cooking_videos')
 })

@@ -1,12 +1,19 @@
-<ul class="list-group">
+<a class="btn btn-primary" href="/cooking_videos/new" role="button">Add A New Video</a>
+
+
+<ul class="list-group" style="margin: 20px; font-family: Archivo;">
     <%contentData.forEach((content, index)=>{%>
-        <li class="list-group-item" style="display:flex; flex-direction: row; align-items: center;"><%= content.contentCreator %> cooks a <%= content.contentCountry %> <a href="<%=content.contentUrl%>" style="align-self:center; flex-direction: row; margin: 2px;"> meal.</a>
-            <form action="/cooking_videos<%= index %>/?_method=DELETE" method="POST" style="margin: 5px; align-self: flex-end">
-                <div class="delete-container">
-                    <input type="submit" value="❌">
+        <li class="list-group-item" style="display:flex; flex-direction: row; align-items: center; justify-content: flex-start;">
+                <div class="edit-container" style="margin-right: 10px;">
+                    <a class="btn btn-success" href="/cooking_videos/edit/<%= index %>" role="button">✎</a>
                 </div>
-            
+            <form action="/cooking_videos/edit/<%= index %>/?_method=DELETE" method="POST" style="margin-right: 10px;">
+                <div class="delete-container">
+                    <input class="btn btn-danger" style="color:white;" type="submit" value="✕">
+                </div>
             </form>
+            <h5 style="justify-content: center;"><%= content.contentCreator %> cooks a <%= content.contentCountry %> <a href="/cooking_videos/<%= index %>" style="margin: 2px;"> meal.</a></h5>
+            
         </li>
     <% }) %>
 </ul>

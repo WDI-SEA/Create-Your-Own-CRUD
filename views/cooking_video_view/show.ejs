@@ -1,9 +1,16 @@
 <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
   <div class="embed-responsive embed-responsive-16by9" style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-    <h3>
-        <%= content.contentCreator %>
-        <small class="text-muted"><%= content.contentCountry%></small>
+    <h3 style="margin: 20px;">
+        <%= content.contentCreator %> /
+        <small class="text-muted"><%= content.contentCountry%></small> /
+        <small class="text-muted"><%= content.contentRecipe%></small> /
     </h3>
     <iframe class="embed-responsive-item" style="width: 400px; height: 400px;" src="<%= content.contentUrl %>" allowfullscreen></iframe>
-  </div>
+
+</div>
+</div>
+<div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 20px;">
+    <p class="lead">
+        <%= content.contentDescription%>
+    </p>  
 </div>
