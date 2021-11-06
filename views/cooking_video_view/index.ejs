@@ -1,0 +1,12 @@
+<ul class="list-group">
+    <%contentData.forEach((content, index)=>{%>
+        <li class="list-group-item" style="display:flex; flex-direction: row; align-items: center;"><%= content.contentCreator %> cooks a <%= content.contentCountry %> <a href="<%=content.contentUrl%>" style="align-self:center; flex-direction: row; margin: 2px;"> meal.</a>
+            <form action="/cooking_videos<%= index %>/?_method=DELETE" method="POST" style="margin: 5px; align-self: flex-end">
+                <div class="delete-container">
+                    <input type="submit" value="❌">
+                </div>
+            
+            </form>
+        </li>
+    <% }) %>
+</ul>
