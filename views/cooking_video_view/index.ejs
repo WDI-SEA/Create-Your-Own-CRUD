@@ -12,7 +12,7 @@
                     <input class="btn btn-danger" style="color:white;" type="submit" value="✕">
                 </div>
             </form>
-            <h5 style="justify-content: center;"><%= content.contentCreator %> cooks a <%= content.contentCountry %> <a href="/cooking_videos/<%= index %>" style="margin: 2px;"> meal.</a></h5>
+            <h5 style="justify-content: center;"><%= content.contentCreator %> cooks a <%= content.contentCountry %> meal: <a href="/cooking_videos/<%= index %>" style="margin: 2px;"><%= content.contentRecipe %></a></h5>
             
         </li>
     <% }) %>
