@@ -1,0 +1,35 @@
+<form Style="display: flex; flex-direction: column; justify-content: flex-end; align-items:center; font-family: Archivo;" action="/cooking_videos/<%=contentPageId%>/?_method=PUT" method="POST"> 
+    
+    <div class="mb-3">
+        <label for="contentCreator">Cook's Name</label>
+        <br>
+        <input type="text" id="contentCreator" name="contentCreator" value="<%= contentID.contentCreator %>">
+      </div>
+
+      <div class="mb-3">
+        <label for="contentCountry">Cooking Style</label>
+        <br>
+        <input type="text" id="contentCountry" name="contentCountry" value="<%= contentID.contentCountry %>">
+      </div>
+
+      <div class="mb-3">
+        <label for="contentURL">Video URL</label>
+        <br>
+        <input type="text" id="contentURL" name="contentUrl" value="<%= contentID.contentUrl %>">
+      </div>
+
+      <div class="mb-3">
+        <label for="contentRecipe">Recipe Name</label>
+        <br>
+        <input type="text" id="contentRecipe" name="contentRecipe" value="<%= contentID.contentRecipe%>">
+      </div>
+
+      <div class="mb-3">
+        <label for="contentDescription">Description</label>
+        <br>
+        <input type="text" height="300px" id="contentDescription" name="contentDescription" value="<%= contentID.contentDescription%>">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
