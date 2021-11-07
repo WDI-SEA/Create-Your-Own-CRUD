@@ -3,7 +3,7 @@ const ejsLayouts = require('express-ejs-layouts')
 const fs = require('fs')
 const methodOverride = require('method-override')
 
-const app = express()
+const app = module.exports = express()
 
 app.set('view engine', 'ejs')
 app.use(ejsLayouts)

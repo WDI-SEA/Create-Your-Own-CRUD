@@ -15,6 +15,10 @@ This project utilizes, express, express-ejs-layouts and bootstrap.
 
 ## Stretch Goals:
 - [ ] Create a Custom CSS Stylesheet, Improve Styling, improved per Route Styles?
-- [ ] Separate Router Logic from Controller Logic
+- [x] Separate Router Logic from Controller Logic
 - [ ] Learn how to use checkbox in order to push boolean values into JSON.
 
+## Roadblocks
+- [x] Refactoring the Router Logic from Controller Logic, I will just need to make sure the filenames correspond to their correct place.
+
+> NOTE: Concerns were misplaced, I just had to learn about how to export modules correctly...
