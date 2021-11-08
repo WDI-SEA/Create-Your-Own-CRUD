@@ -7,12 +7,12 @@ router.get('/', (req, res) => {
     let song = fs.readFileSync('./songs.json')
     let songData = JSON.parse(song)
     let songFilter = req.query.songFilter
-    if(songFilter) {
+    if (songFilter) {
         songData = songData.filter((song) => {
             return song.name.toLowerCase() === songFilter.toLowerCase()
         })
     }
-    res.render('songs/index.ejs', {songData: songData})
+    res.render('songs/index.ejs', { songData: songData })
 })
 
 // NEW ROUTE
@@ -25,7 +25,7 @@ router.get('/edit/:idx', (req, res) => {
     let song = fs.readFileSync('./songs.json')
     let songData = JSON.parse(song)
     console.log("Test edit route")
-    res.render('songs/edit.ejs', {songId: req.params.idx, song: songData[req.params.idx]})
+    res.render('songs/edit.ejs', { songId: req.params.idx, song: songData[req.params.idx] })
 })
 
 // UPDATE ROUTE
@@ -44,7 +44,7 @@ router.get('/:idx', (req, res) => {
     let song = fs.readFileSync('./songs.json')
     let songData = JSON.parse(song)
     let songIndex = req.params.idx
-    res.render('songs/show.ejs', {mySong: songData[songIndex]})
+    res.render('songs/show.ejs', { mySong: songData[songIndex] })
 })
 
 // NEW ROUTE

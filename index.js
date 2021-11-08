@@ -6,7 +6,7 @@ const methodOverride = require('method-override')
 // MIDDLEWARE
 app.set('view engine', 'ejs')
 app.use(ejsLayouts)
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 // CONTROLLERS MIDDLEWARE
 app.use('/songs', require('./controllers/songs.js'))

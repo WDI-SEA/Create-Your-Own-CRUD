@@ -9,7 +9,7 @@
         <li>
             <h2>
                 <%= song.name %>
-            </h2><iframe width="560" height="315" src=<%= song.link %> title="YouTube video player" frameborder="0"
+            </h2><iframe width="560" height="315" src=<%=song.link %> title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
             <form action="songs/<%= index %>/?_method=DELETE" method="POST">
