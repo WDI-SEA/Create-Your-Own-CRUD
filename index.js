@@ -9,7 +9,7 @@ app.use(ejsLayouts)
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride('_method'))
 // CONTROLLERS MIDDLEWARE
-app.use('/controllers', require('./controllers/songs.js'))
+app.use('/songs', require('./controllers/songs.js'))
 // HOME ROUTE
 app.get('/', (req, res) => {
     res.render('home.ejs')

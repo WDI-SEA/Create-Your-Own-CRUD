@@ -12,19 +12,20 @@ router.get('/', (req, res) => {
             return song.name.toLowerCase() === songFilter.toLowerCase()
         })
     }
-    res.render('/index.ejs', {songData: songData})
+    res.render('songs/index.ejs', {songData: songData})
 })
 
 // NEW ROUTE
 router.get('/new', (req, res) => {
-    res.render('new.ejs')
+    res.render('songs/new.ejs')
 })
 
 // GET UPDATE FORM
 router.get('/edit/:idx', (req, res) => {
     let song = fs.readFileSync('./songs.json')
     let songData = JSON.parse(song)
-    res.render('edit.ejs', {songId: req.params.idx, song: songData[req.params.idx]})
+    console.log("Test edit route")
+    res.render('songs/edit.ejs', {songId: req.params.idx, song: songData[req.params.idx]})
 })
 
 // UPDATE ROUTE
@@ -34,7 +35,8 @@ router.put('/:idx', (req, res) => {
     songData[req.params.idx].name = req.body.name
     songData[req.params.idx].link = req.body.link
     fs.writeFileSync('./songs.json', JSON.stringify(songData))
-    res.render('/')
+    console.log('Posting \n', req.body)
+    res.redirect('/songs')
 })
 
 // SHOW ROUTE
@@ -42,7 +44,7 @@ router.get('/:idx', (req, res) => {
     let song = fs.readFileSync('./songs.json')
     let songData = JSON.parse(song)
     let songIndex = req.params.idx
-    res.render('/show.ejs', {mySong: songData[songIndex]})
+    res.render('songs/show.ejs', {mySong: songData[songIndex]})
 })
 
 // NEW ROUTE
@@ -51,7 +53,8 @@ router.post('/', (req, res) => {
     let songData = JSON.parse(song)
     songData.push(req.body)
     fs.writeFileSync('./songs.json', JSON.stringify(songData))
-    res.redirect('/')
+    console.log('Posting \n', req.body)
+    res.redirect('/songs')
 })
 
 // DELETE ROUTE
@@ -60,7 +63,8 @@ router.delete('/:idx', (req, res) => {
     let songData = JSON.parse(song)
     songData.splice(req.params.idx, 1)
     fs.writeFileSync('./songs.json', JSON.stringify(songData))
-    res.redirect('/')
+    console.log('Posting \n', req.body)
+    res.redirect('/songs')
 })
 
 module.exports = router
